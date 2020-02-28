@@ -1,0 +1,14 @@
+<ul>
+    ${arrayOfRest.map(restaurant => {
+       return `<li><a href='/restaurant/${restaurant.id}'>${restaurant.name}</a><ul>
+            ${arrayOfReview.map(review => {
+                let result = '';
+                if (review.restaurant_id === restaurant.id){
+                    result = `<li>Stars: ${review.stars} - Title: ${review.title}</li>`;
+                }
+                return result;
+            }).join('')}
+       </ul></li>`
+    }).join('')}   
+</ul>
+
